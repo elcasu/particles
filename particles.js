@@ -4,8 +4,11 @@ const particles = (function() {
       const particleCount = 1800
       const particles =  new THREE.Geometry()
       const pMaterial = new THREE.PointsMaterial({
-        color: 0x008800,
-        size: 10
+        color: 0xFFFFFF,
+        size: 5,
+        map: new THREE.TextureLoader().load('img/particle.png'),
+        blending: THREE.AdditiveBlending,
+        transparent: true
       })
 
       for(let p = 0; p < particleCount; p++) {
@@ -16,7 +19,9 @@ const particles = (function() {
         ))
       }
 
-      return new THREE.Points(particles, pMaterial)
+      let system = new THREE.Points(particles, pMaterial)
+      system.sortParticles = true
+      return system
     }
   }
 })()
