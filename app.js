@@ -30,6 +30,7 @@ let zDir = -1
 
 function render() {
   particleSystem.rotation.y += 0.01
+  particleSystem.rotation.x += 0.01
   particleSystem.rotation.z += 0.01
   particleSystem.position.z += zDir
   let zPos = particleSystem.position.z
