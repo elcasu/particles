@@ -34,7 +34,7 @@ function render() {
   particleSystem.rotation.z += 0.01
   particleSystem.position.z += zDir
   let zPos = particleSystem.position.z
-  if(zPos <= -200 || zPos >= 0) {
+  if(zPos <= -800 || zPos >= 200) {
     zDir *= -1
   }
   renderer.render(scene, camera);
